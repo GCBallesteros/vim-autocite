@@ -54,7 +54,7 @@ vim-autocite defines two global variables:
 ## Feature Request
 If you would like vim-autocite to work on other filetypes or citation labels ask for it.
 
-## Acknowledgement
+## Acknowledgements
 The core of the script has been scavenged from [vim-latex](https://github.com/lervag/vim-latex) so vim-autocite
 wouldn't be possible without Karl Yngve Lervag.
 
