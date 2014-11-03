@@ -43,7 +43,7 @@ vim-autocite defines two global variables:
      ```
      let g:autocite_search_in_dir=1
      ```
-- Enable/Disable the search of bibfiles specified inside the the document
+- Enable/Disable the search of bibfiles specified inside the document
      with ```bibtexfile:``` (default: 1)
 
      ```

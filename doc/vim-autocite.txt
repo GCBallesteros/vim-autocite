@@ -1,1 +1,88 @@
-Simple documentation for the plugin
+vim-autocite.txt Bibtex autocompletion for VIM
+
+Author:  Guillem Ballesteros <guillem.ballesteros.garcia@gmail.com>
+License: MIT license {{{
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+}}}
+
+=============================================================================
+CONTENTS                                           vim-autocite-contents
+
+    1. Intro .......................... vim-autocite-intro
+    2. Options ........................ vim-autocite-options
+    3. Usage .......................... vim-autocite-usage
+    4. Requirments .................... vim-autocite-requirements
+    5. Thanks ......................... vim-autocite-thanks
+
+=============================================================================
+INTRO                                              vim-autocite-intro
+
+Autocite is a vim plugin to easily complete citation tags based on the contents of bibtex files. It searches for included bibfiles in the document and/or the directory where it is stored.
+
+It currently supports the asciidoc-bib convention for citation tags in txt files. Although it should be easy enough to modify to include other file extensions and tag styles.
+
+The core functionality for this plugin is extracted from Karl Yngve's vim-latex plugin.
+=============================================================================
+OPTIONS                                            vim-autocite-options
+
+Enable the search of bibfiles in the directory where the edited document is stored.
+
+    let g:autocite_search_in dir=1
+
+Enable/Disable the search of bibfiles specified inside the document with ```bibtexfile:``` (default: 1)
+
+    let g:autocite_search_in_doc=1
+
+
+=============================================================================
+USAGE                                              vim-autocite-usage
+
+Bibliography (*.bib) files are searched for by default in the
+ directory where the document being edited is stored. Bibliography files can also be included by adding to the
+document commented lines such as:
+
+// bibtexfile:/full/path/to/my/bibliography/my_bib.bib
+
+
+Once vim-autocite is capable of finding your bibliography
+files you only have to start writing your citation with
+the [Asciidoc-bib](https://github.com/petercrlane/asciidoc-bib)
+conventions:
+
+[cite:]
+[citenp:]
+
+
+after the colon write some clue and \<Control-X\>\<Control-O\> to
+trigger the autocompletion menu. A clue may be the last name of
+an author, part of the title or bibtex label for the article.
+
+=============================================================================
+REQUIREMENTS                                       vim-autocite-requirements
+
+Vim-autocite requires that bibtex is installed.
+
+=============================================================================
+THANKS                                             vim-autocite-thanks
+
+The core of the script has been scavenged from [vim-latex](https://github.com/lervag/vim-latex) so vim-autocite
+wouldn't be possible without Karl Yngve Lervag.
+
+
+ vim:tw=78:ts:8:ft=help:norl:
